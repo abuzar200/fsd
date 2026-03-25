@@ -1,0 +1,488 @@
+Dr.APJ ABDUL KALAM SCHOOL OF ENGINEERING
+DEPARTMENT OF ENGINEERING
+LAB PROGRAMS
+Full Stack Development 
+Program: BTCE/BTIT/BECS/BEIS
+Semester: V
+Course Code: 10A****24414 
+1.
+Build a structural shell using only HTML5 semantic tags. Create responsive layouts with Bootstrap.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 1: Multi-Break Grid</title>
+    <!-- Bootstrap 5 CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body { background-color: #f4f7f6; font-family: sans-serif; }
+        .lab-header { background: #0d6efd; color: white; padding: 2rem 0; margin-bottom: 2rem; }
+        /* Style for the grid boxes */
+        .grid-box {
+            background: white;
+            border: 2px solid #dee2e6;
+            border-radius: 5px;
+            padding: 20px;
+            text-align: center;
+            margin-bottom: 1rem;
+            min-height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <header class="lab-header text-center">
+        <div class="container">
+            <h1>Lab 01: Multi-Break Grid</h1>
+            <p>Mastering Responsive Layouts with Bootstrap 12-Column System</p>
+        </div>
+    </header>
+    <main class="container">
+        <!-- LAB INSTRUCTIONS FOR STUDENTS -->
+        <section class="alert alert-info shadow-sm mb-5">
+            <h5><i class="bi bi-info-circle"></i> Quick Focus Task:</h5>
+            <p>Modify the column classes in the grid below to achieve the following:</p>
+            <ol>
+                <li><strong>Mobile:</strong> 1 item per row (use <code>col-12</code>)</li>
+                <li><strong>Tablets:</strong> 2 items per row (use <code>col-md-6</code>)</li>
+                <li><strong>Desktops:</strong> 3 items per row (use <code>col-lg-4</code>)</li>
+            </ol>
+        </section>
+        <!-- THE GRID SYSTEM -->
+        <div class="row">
+            <!-- Item 1 -->
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="grid-box shadow-sm">Card 1</div>
+            </div>
+            <!-- Item 2 -->
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="grid-box shadow-sm">Card 2</div>
+            </div>
+            <!-- Item 3 -->
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="grid-box shadow-sm">Card 3</div>
+            </div>
+            <!-- Item 4 -->
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="grid-box shadow-sm">Card 4</div>
+            </div>
+            <!-- Item 5 -->
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="grid-box shadow-sm">Card 5</div>
+            </div>
+            <!-- Item 6 -->
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="grid-box shadow-sm">Card 6</div>
+            </div>
+        </div>
+        <!-- EXPLANATION FOR VIVA -->
+        <div class="card mt-5">
+            <div class="card-body">
+                <h5 class="card-title text-primary">Concept Summary</h5>
+                <p class="card-text">
+                    Bootstrap uses a <strong>12-column grid</strong>. 
+                    If you set a class to <code>col-4</code>, it takes up 4/12 (one-third) of the width. 
+                    Responsive prefixes like <code>-md-</code> (medium) and <code>-lg-</code> (large) allow the layout to change dynamically when the screen is resized.
+                </p>
+            </div>
+        </div>
+    </main>
+    <footer class="text-center mt-5 text-muted py-3">
+        <small>Warmup Lab Series &copy; 2026</small>
+    </footer>
+</body>
+</html>
+2.
+Create Class and function components using React and Implement React Router navigation 
+  Lab: React Components & Routing with Vite
+Objective: In this lab, you will set up a React application using Vite, create both Class and Function components, and implement navigation between them using React Router.
+Prerequisites
+Node.js installed on your machine.
+A code editor (VS Code recommended).
+Step 1: Initialize the Project
+We will use Vite to create a fast and modern React project build.
+Open your terminal (Command Prompt/PowerShell/Terminal).
+Run the following command to create the project:
+Bash
+npm create vite@latest my-react-lab -- --template react
+Navigate into your project folder:
+Bash
+cd my-react-lab
+Install the default dependencies:
+Bash
+npm install
+Step 2: Install React Router
+React does not come with routing built-in. We need to install the standard library for routing.
+In your terminal, inside the project folder, run:
+Bash
+npm install react-router-dom
+Step 3: Create the Components
+We will create a specific folder for components to keep our code organized.
+Inside the src folder, create a new folder named components.
+We will now create three files inside src/components/:
+Home.jsx (Function Component)
+About.jsx (Class Component)
+Navbar.jsx (Navigation)
+A. Create a Function Component (Home.jsx)
+Function components are the modern standard in React. They are simple JavaScript functions that return JSX.
+File: src/components/Home.jsx
+JavaScript
+import React from 'react';
+ 
+// This is a Functional Component
+function Home() {
+  return (
+    <div style={{ padding: '20px', textAlign: 'center' }}>
+      <h1>Welcome to the Home Page</h1>
+      <p>This component was created using a standard Function.</p>
+    </div>
+  );
+}
+ 
+export default Home;
+B. Create a Class Component (About.jsx)
+Class components were the standard before React 16.8. It is important to know how to recognize and write them.
+File: src/components/About.jsx
+JavaScript
+import React, { Component } from 'react';
+ // This is a Class Component
+class About extends Component {
+  render() {
+    return (
+      <div style={{ padding: '20px', textAlign: 'center' }}>
+        <h1>About Us</h1>
+        <p>This component was created using ES6 Class syntax.</p>
+      </div>
+    );
+  }
+}
+ export default About;
+C. Create the Navigation Bar (Navbar.jsx)
+We will use the Link component from react-router-dom to handle navigation without reloading the page.
+File: src/components/Navbar.jsx
+JavaScript
+import React from 'react';
+import { Link } from 'react-router-dom';
+ function Navbar() {
+  return (
+    <nav style={{ padding: '10px', background: '#f0f0f0', textAlign: 'center' }}>
+      {/* We use Link instead of <a href> to prevent page refresh */}
+      <Link to="/" style={{ marginRight: '15px' }}>Home</Link>
+      <Link to="/about">About</Link>
+    </nav>
+  );
+}
+ export default Navbar;
+Step 4: Configure Routing in App.jsx
+Now we need to wire everything together in the main App file. We will define which component renders for which URL path.
+Open src/App.jsx.
+Replace the entire content with the code below:
+File: src/App.jsx
+JavaScript
+import React from 'react';
+// 1. Import Router components
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+ 
+// 2. Import our custom components
+import Navbar from './components/Navbar';
+import Home from './components/Home';
+import About from './components/About';
+function App() {
+  return (
+    // 3. Wrap the entire application in the Router
+    <Router>
+      <div>
+        {/* The Navbar stays visible on all pages */}
+        <Navbar />
+        {/* 4. Define the Routes */}
+        <Routes>
+          {/* When the path is "/", render the Home component */}
+          <Route path="/" element={<Home />} />
+          
+          {/* When the path is "/about", render the About component */}
+          <Route path="/about" element={<About />} />
+        </Routes>
+      </div>
+    </Router>
+  );
+}
+export default App;
+Step 5: Run the Application
+Go back to your terminal.
+Start the development server:
+Bash
+npm run dev
+Vite will show a URL (usually http://localhost:5173/). Ctrl+Click the link to open it in your browser.
+ 
+3.
+Develop a responsive portfolio website using React Bootstrap
+Lab Program: Develop a Responsive Portfolio Website using React Bootstrap
+Objective: To create a modern, responsive portfolio website using React, Vite for the build tool, and React Bootstrap for styling and grid layouts.
+Step 1: Project Initialization
+First, create the project structure using Vite. Vite is preferred over Create React App for its speed and modern configuration.
+Generate the project:
+Bash
+npm create vite@latest myapp -- --template reactcd myapp
+Install dependencies:
+We need react-bootstrap for components and bootstrap for the underlying CSS.
+Bash
+npm install react-bootstrap 
+npm install bootstrap
+Step 2: Configure Global Styles
+In a Vite project, the entry point for styles is main.jsx. You must import the Bootstrap CSS here so it is available globally.
+File: src/main.jsx
+JavaScript
+import React from 'react'import ReactDOM from 'react-dom/client'import App from './App.jsx'import 'bootstrap/dist/css/bootstrap.min.css' // Crucial for Bootstrap stylesReactDOM.createRoot(document.getElementById('root')).render(  <React.StrictMode>    <App />  </React.StrictMode>,)
+Step 3: Create a folder named “components” in SRC folder
+In that create 4 jsx files
+Named 
+Hero.jsx, 
+Contact.jsx, 
+Navigation.jsx, 
+Projects.jsx
+Step : 4 Create the Navigation.jsx component (Horizontal Layout)
+For this lab, we use a custom horizontal navigation to ensure visibility across all device types without relying on complex JavaScript toggles.
+Key Component: Navbar and Nav.
+Logic: Use flex-row and gap utilities to keep menu items side-by-side even on mobile.
+Step 4: Design the Hero (Call to Action)
+The Hero section introduces the user. We use Bootstrap's Display Typography and Lead classes for a professional look.
+Key Component: Container for centering and Badge for status.
+Spacing: Use py-5 (padding-top/bottom) to give the section "breathing room."
+Step 5: Implement the Responsive Grid
+This is the core "Responsive" part of the lab. We use the Bootstrap 12-column grid system.
+Logic: * lg={4}: Shows 3 columns on large screens ($12 \div 4 = 3$).
+md={6}: Shows 2 columns on tablets ($12 \div 6 = 2$).
+Default: Stacks vertically on mobile (12 columns wide).
+Components: Card for project details and Card.Img for thumbnails.
+Step 6: Create the Contact Form
+A standard portfolio needs a way for users to reach out. We use Form.Group and Form.Control for a consistent UI.
+Step 7: Final Assembly and Styling
+Finally, we assemble all parts in App.jsx. We use a useEffect hook to inject custom CSS for hover animations (like moving the cards up when moused over).
+How to Run the Lab
+Start the dev server:
+Bash
+npm run dev
+Verify Responsiveness: Open the browser, press F12 (Inspect Element), and toggle the "Device Toolbar" to see the grid change from 3 columns to 1 column.
+4.
+Develop a React frontend that fetches data from a Node.js backend API  and Build counter and task apps 
+4) Folder structure (for reference)
+react-express-lab/├─ server/│  ├─ index.js│  └─ package.json└─ client/   ├─ index.html   ├─ package.json   └─ src/      ├─ App.jsx      ├─ main.jsx      └─ index.css
+1) Set up the backend (Node.js + Express + CORS)
+mkdir server
+cd server
+npm init –y // create package.json
+npm install express cors
+npm install --save-dev nodemon
+1.2 Add a simple Express server
+// server/index.js
+const express = require('express');
+const cors = require('cors');
+ 
+const app = express();
+app.use(cors());            // allow all origins for simplicity
+app.use(express.json());    // parse JSON bodies
+ 
+// In-memory data (resets on server restart)
+let tasks = [
+  { id: 1, title: 'Learn Express', done: false },
+  { id: 2, title: 'Build React app', done: false },
+];
+ 
+// Health check / hello route
+app.get('/api/hello', (req, res) => {
+  res.json({ message: 'Hello from Express API 👋' });
+});
+ 
+// Get all tasks
+app.get('/api/tasks', (req, res) => {
+  res.json(tasks);
+});
+ 
+// Add a task: { title: string }
+app.post('/api/tasks', (req, res) => {
+  const { title } = req.body;
+  if (!title || !title.trim()) {
+    return res.status(400).json({ error: 'Title is required' });
+  }
+  const newTask = { id: Date.now(), title: title.trim(), done: false };
+  tasks.push(newTask);
+  res.status(201).json(newTask);
+});
+ 
+// Toggle task done by id
+app.patch('/api/tasks/:id/toggle', (req, res) => {
+  const id = Number(req.params.id);
+  const task = tasks.find(t => t.id === id);
+  if (!task) return res.status(404).json({ error: 'Task not found' });
+  task.done = !task.done;
+  res.json(task);
+});
+ 
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+  console.log(`✅ API running at http://localhost:${PORT}`);
+});
+1.3 Run the backend
+Nodemon index.js
+2) Set up the frontend (React + Vite)
+mkdir client
+cd client
+npm create vite@latest . -- --template react
+npm install
+npm install axios
+3) Build the React UI (Counter + Tasks + API fetch)
+import { useEffect, useState } from 'react';
+import axios from 'axios';
+ 
+const API_BASE = 'http://localhost:3000/api'; // our Express server
+ 
+export default function App() {
+  // Counter state (pure frontend)
+  const [count, setCount] = useState(0);
+ 
+  // Tasks state (fetched from backend)
+  const [tasks, setTasks] = useState([]);
+  const [newTitle, setNewTitle] = useState('');
+  const [loading, setLoading] = useState(false);
+  const [apiMessage, setApiMessage] = useState('');
+ 
+  // Fetch hello message (sanity check)
+  useEffect(() => {
+    axios.get(`${API_BASE}/hello`)
+      .then(res => setApiMessage(res.data.message))
+      .catch(() => setApiMessage('Could not reach API'));
+  }, []);
+ 
+  // Fetch tasks from backend
+  const loadTasks = async () => {
+    setLoading(true);
+    try {
+      const res = await axios.get(`${API_BASE}/tasks`);
+      setTasks(res.data);
+    } catch (err) {
+      console.error(err);
+      alert('Failed to load tasks. Is the server running on port 3000?');
+    } finally {
+      setLoading(false);
+    }
+  };
+ 
+  useEffect(() => {
+    loadTasks();
+  }, []);
+ 
+  // Add task via POST
+  const addTask = async (e) => {
+    e.preventDefault();
+    if (!newTitle.trim()) return;
+    try {
+      const res = await axios.post(`${API_BASE}/tasks`, { title: newTitle.trim() });
+      setTasks(prev => [...prev, res.data]);
+      setNewTitle('');
+    } catch (err) {
+      console.error(err);
+      alert('Failed to add task');
+    }
+  };
+ 
+  // Toggle done via PATCH
+  const toggleTask = async (id) => {
+    try {
+      const res = await axios.patch(`${API_BASE}/tasks/${id}/toggle`);
+      setTasks(prev => prev.map(t => (t.id === id ? res.data : t)));
+    } catch (err) {
+      console.error(err);
+      alert('Failed to toggle task');
+    }
+  };
+ 
+  return (
+    <div style={{ fontFamily: 'system-ui, Arial, sans-serif', padding: 24, maxWidth: 700, margin: '0 auto' }}>
+      <h1>React + Express Lab</h1>
+      <p style={{ color: '#555' }}>{apiMessage || 'Checking API...'}</p>
+ 
+      {/* Counter App */}
+      <section style={{ border: '1px solid #ddd', borderRadius: 8, padding: 16, marginTop: 16 }}>
+        <h2>Counter (Frontend Only)</h2>
+        <p>Count: <strong>{count}</strong></p>
+        <button onClick={() => setCount(c => c + 1)}>Increment</button>{' '}
+        <button onClick={() => setCount(0)}>Reset</button>
+      </section>
+ 
+      {/* Tasks App */}
+      <section style={{ border: '1px solid #ddd', borderRadius: 8, padding: 16, marginTop: 16 }}>
+        <h2>Tasks (Uses Backend API)</h2>
+ 
+        <form onSubmit={addTask} style={{ marginBottom: 12 }}>
+          <input
+            type="text"
+            placeholder="New task title"
+            value={newTitle}
+            onChange={(e) => setNewTitle(e.target.value)}
+            style={{ padding: 8, width: '70%' }}
+          />
+          <button type="submit" style={{ marginLeft: 8 }}>Add</button>
+        </form>
+ 
+        <button onClick={loadTasks} disabled={loading}>
+          {loading ? 'Loading...' : 'Reload Tasks'}
+        </button>
+ 
+        <ul style={{ marginTop: 12, paddingLeft: 18 }}>
+          {tasks.map(t => (
+            <li key={t.id} style={{ marginBottom: 6 }}>
+              <label style={{ cursor: 'pointer' }}>
+                <input
+                  type="checkbox"
+                  checked={t.done}
+                  onChange={() => toggleTask(t.id)}
+                  style={{ marginRight: 8 }}
+                />
+                <span style={{ textDecoration: t.done ? 'line-through' : 'none' }}>
+                  {t.title}
+                </span>
+              </label>
+            </li>
+          ))}
+          {tasks.length === 0 && !loading && <li>No tasks yet. Add one!</li>}
+        </ul>
+      </section>
+    </div>
+  );
+}
+ 3.2 Run the React app
+npm run dev
+Write the below code in observation 
+LAB4- Observation
+# 1) Backend
+mkdir -p Lab4/server
+npm init -y
+npm install express cors
+npm i -D nodemon
+# create index.js (paste code above)
+# add scripts to package.json (dev/start)
+npm run dev  # keep running
+# 2) Frontend (in a new terminal)
+cd ../
+mkdir client && cd client
+npm create vite@latest . -- --template react
+npm install
+npm install axios
+# replace src/App.jsx with code above
+npm run dev
+5.
+Convert React app to PWA - Convert an existing React app into a PWA
+6.
+Execute browser notifications - Implement basic push notifications for a React app using the Notification API
+7.
+Apply A-Frame for AR scenes - Create a basic AR experience using the WebXR API.
+8.
+Simulate auth token storage
+9.
+Create accessible forms - Design an accessible contact form using semantic HTML and ARIA roles.   
+10
+Build 3D scenes with Three.js Build a simple 3D scene with Three.js.   

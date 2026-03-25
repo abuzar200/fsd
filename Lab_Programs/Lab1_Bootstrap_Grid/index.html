@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 1: Responsive Grid with Bootstrap</title>
+    <!-- Modern Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <!-- Bootstrap 5 CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <style>
+        body { 
+            background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+            font-family: 'Inter', sans-serif; 
+            min-height: 100vh;
+        }
+        .lab-header { 
+            background: linear-gradient(90deg, #1e3c72 0%, #2a5298 100%); 
+            color: white; 
+            padding: 4rem 0; 
+            margin-bottom: 3rem; 
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border-bottom: 5px solid #ffbc00;
+        }
+        .lab-header h1 {
+            font-weight: 800;
+            letter-spacing: -1px;
+            margin-bottom: 1rem;
+        }
+        .lab-header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        /* Style for the grid boxes */
+        .grid-box {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 12px;
+            padding: 30px 20px;
+            text-align: center;
+            margin-bottom: 1.5rem;
+            min-height: 150px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            font-size: 1.5rem;
+            color: #333;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.05);
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            position: relative;
+            overflow: hidden;
+        }
+        .grid-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 50%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+            transition: 0.5s;
+        }
+        .grid-box:hover::before {
+            left: 100%;
+        }
+        .grid-box:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+            border-color: #0d6efd;
+            color: #0d6efd;
+        }
+        .grid-box i {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            color: #ffbc00;
+            transition: transform 0.3s ease;
+        }
+        .grid-box:hover i {
+            transform: scale(1.2);
+        }
+        .info-card {
+            border: none;
+            border-radius: 15px;
+            background: white;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            border-left: 5px solid #0d6efd;
+        }
+        .info-card h5 {
+            color: #0d6efd;
+            font-weight: 700;
+        }
+    </style>
+</head>
+<body>
+    <header class="lab-header text-center">
+        <div class="container">
+            <h1>Lab 01: Multi-Break Grid</h1>
+            <p>Mastering Responsive Layouts with Bootstrap 12-Column System</p>
+        </div>
+    </header>
+    <main class="container">
+        <!-- LAB INSTRUCTIONS FOR STUDENTS -->
+        <section class="info-card p-4 mb-5">
+            <h5 class="mb-3"><i class="bi bi-info-circle-fill me-2"></i> How This Works:</h5>
+            <p>Resize your browser window to see the grid change automatically based on these rules:</p>
+            <ul class="list-unstyled">
+                <li class="mb-2"><i class="bi bi-phone me-2 text-secondary"></i><strong>Mobile:</strong> 1 item per row (<code>col-12</code>)</li>
+                <li class="mb-2"><i class="bi bi-tablet me-2 text-secondary"></i><strong>Tablets:</strong> 2 items per row (<code>col-md-6</code>)</li>
+                <li><i class="bi bi-pc-display me-2 text-secondary"></i><strong>Desktops:</strong> 3 items per row (<code>col-lg-4</code>)</li>
+            </ul>
+        </section>
+        
+        <!-- THE GRID SYSTEM -->
+        <div class="row">
+            <!-- Item 1 -->
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="grid-box">
+                    <i class="bi bi-1-circle-fill"></i>
+                    Card 1
+                </div>
+            </div>
+            <!-- Item 2 -->
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="grid-box">
+                    <i class="bi bi-2-circle-fill"></i>
+                    Card 2
+                </div>
+            </div>
+            <!-- Item 3 -->
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="grid-box">
+                    <i class="bi bi-3-circle-fill"></i>
+                    Card 3
+                </div>
+            </div>
+            <!-- Item 4 -->
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="grid-box">
+                    <i class="bi bi-4-circle-fill"></i>
+                    Card 4
+                </div>
+            </div>
+            <!-- Item 5 -->
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="grid-box">
+                    <i class="bi bi-5-circle-fill"></i>
+                    Card 5
+                </div>
+            </div>
+            <!-- Item 6 -->
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="grid-box">
+                    <i class="bi bi-6-circle-fill"></i>
+                    Card 6
+                </div>
+            </div>
+        </div>
+
+        <!-- EXPLANATION FOR VIVA -->
+        <div class="card mt-5 border-0 shadow-sm rounded-4" style="background: #e9ecef;">
+            <div class="card-body p-5">
+                <h5 class="card-title text-dark fw-bold mb-3"><i class="bi bi-lightbulb-fill text-warning me-2"></i>Concept Summary</h5>
+                <p class="card-text text-secondary lh-lg mb-0">
+                    Bootstrap uses a <strong>12-column grid</strong>. 
+                    If you set a class to <code>col-4</code>, it takes up 4/12 (one-third) of the available width. 
+                    Responsive prefixes like <code>-md-</code> (medium/tablets) and <code>-lg-</code> (large/desktops) specify at which screen size these rules should apply. This allows the layout to seamlessly adapt to any device without writing complex custom CSS media queries!
+                </p>
+            </div>
+        </div>
+    </main>
+    <footer class="text-center mt-5 text-muted py-4 border-top">
+        <small class="fw-semibold">Lab 1 Completed &copy; 2026</small>
+    </footer>
+</body>
+</html>

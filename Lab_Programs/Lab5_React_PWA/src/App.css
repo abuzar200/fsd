@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
+  color: #333;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pwa-container {
+  padding: 2rem;
+  width: 100%;
+  max-width: 600px;
+}
+
+.glass-panel {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(20px);
+  padding: 3rem 2rem;
+  border-radius: 24px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  position: relative;
+  overflow: hidden;
+}
+
+.icon-badge {
+  font-size: 3rem;
+  background: white;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  margin: 0 auto 1.5rem auto;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+}
+
+h1 {
+  margin: 0 0 10px 0;
+  color: #c94b4b;
+  font-weight: 800;
+  font-size: 2.2rem;
+}
+
+.subtitle {
+  color: #888;
+  font-weight: 600;
+  margin-bottom: 2rem;
+}
+
+.app-content {
+  line-height: 1.6;
+  font-size: 1.1rem;
+}
+
+.elegant-btn {
+  background: white;
+  border: 2px solid #fda085;
+  color: #c94b4b;
+  padding: 12px 30px;
+  border-radius: 50px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin: 2rem 0;
+  transition: all 0.2s ease;
+}
+
+.elegant-btn:hover {
+  background: #fda085;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(253, 160, 133, 0.4);
+}
+
+.install-banner {
+  background: #fdfbfb;
+  padding: 1.5rem;
+  border-radius: 16px;
+  margin-top: 1rem;
+  border: 2px dashed #fda085;
+}
+
+.primary-btn {
+  background: #c94b4b;
+  color: white;
+  border: none;
+  padding: 10px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.primary-btn:hover {
+  background: #b53838;
+}
